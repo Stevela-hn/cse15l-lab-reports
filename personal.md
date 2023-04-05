@@ -9,3 +9,5 @@ $\frac{1}{2} \times \pi \times \theta$ is the probability that you will see this
 *Italic is here*
 
 <sup>There we go superscript</sup>
+
+![Image](demo.jpg)
