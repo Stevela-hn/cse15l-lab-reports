@@ -10,4 +10,10 @@ $\frac{1}{2} \times \pi \times \theta$ is the probability that you will see this
 
 <sup>There we go superscript</sup>
 
+1. This
+2. is
+3. a
+4. list to
+5. [my personal page](https://github.com/Stevela-hn)
+
 ![Image](demo.jpg)
