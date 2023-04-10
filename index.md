@@ -17,3 +17,10 @@ This is a tutorial for accessing remote server and operating file system of CSE1
    - In the terminal, connect to remote server by the command ```$ ssh [15L account username]@ieng6.ucsd.edu``` Note that you should be using your assigned CSE15L account username rather than the UCSD AD username here. But in the author's case, during his lab hours, there're some technical issues on the UCSD tech-support side. So (nearly) all students on that session had to use their UCSD AD username. This might lead to some permission denied issues in the following "command attempts" steps. So the author will be showing the working commands rather than all that was proposed. Upon successfully logging into the remote server, the terminal(bash) should have output like this
 
 ![Image2](p2.png)
+
+## Command Lines practice
+Then feel free to explore the folder structures, with the command lines mentioned in class/documentations. The images below gives an example of the author's try-out.
+
+![Image3](p3.png)
+
+Note: When finish playing, to log out of the server, press `Ctrl + D` or run the command `exit`.
