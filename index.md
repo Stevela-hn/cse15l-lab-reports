@@ -13,4 +13,5 @@ This is a tutorial for accessing remote server and operating file system of CSE1
    - Follow [this link](https://gitforwindows.org/) to get git bash installed in your computer.
    - Then strictly follow the top answer of [this post](https://stackoverflow.com/questions/42606837/how-do-i-use-bash-on-windows-from-the-visual-studio-code-integrated-terminal/50527994#50527994) to enable bash in your Visual Studio Code.
 2. Then use the keyword `ssh` to do remote connecting
-   - Open a new terminal by navigating **Terminal** -> **New Terminal** OR uing shortcut ```Ctrl + Shift + ` ```
+   - Open a new terminal by clicking **Terminal** -> **New Terminal** OR pressing keyboard shortcut ```Ctrl + Shift + ` ```.
+   - In the terminal, connect to remote server by the command ```$ ssh [UCSD AD username]@ieng6.ucsd.edu```
