@@ -21,6 +21,8 @@ This is a tutorial for accessing remote server and operating file system of CSE1
 ## Command Lines practice
 Then feel free to explore the folder structures, with the command lines mentioned in class/documentations. The images below gives an example of the author's try-out.
 
+Comment on this try-out: `cd ~` brings me to home directory, which is where I stayed; `cd` goes nowhere since nothing specified. `ls -lat` gives a list of files in long format, sorted by time of modification. Seems `ls -a` do the same thing but just display the names. 
+
 ![Image3](p3.png)
 
 Note: When finish playing, to log out of the server, press `Ctrl + D` or run the command `exit`.
