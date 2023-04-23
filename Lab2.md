@@ -117,7 +117,7 @@ The two tests as inputs below are not failure inducing i.e. the output for these
   @Test
   public void testAverageWithoutLowest() {
     double[] input0 = {};
-    assertEquals(3.0, ArrayExamples.averageWithoutLowest(input0), 0.0001);
+    assertEquals(0.0, ArrayExamples.averageWithoutLowest(input0), 0.0001);
 
     double[] input1 = { 3.0, 1.0, 3.0 };
     assertEquals(3.0, ArrayExamples.averageWithoutLowest(input1), 0.0001);
