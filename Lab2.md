@@ -152,3 +152,6 @@ We found there’s a bug in the summation strategy of the method, that under the
     return sum / (arr.length - 1);
   }
   ```
+
+## Part3
+In this section, the author will briefly summarize something new he learned from the lab of week 2 and week 3 at CSE15L.
