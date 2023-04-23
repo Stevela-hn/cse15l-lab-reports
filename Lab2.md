@@ -61,7 +61,7 @@ This section provides some try-outs and according explanations for the server we
 /add-message?s=Hello
 ```
 The page shows
-![Image1](L2P1.png| width=100)
+<img src="L2P1.png" width=50% height=50%>
 ```
 /add-message?s=How are you
 ```
