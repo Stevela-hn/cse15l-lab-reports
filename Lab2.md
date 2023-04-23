@@ -77,7 +77,7 @@ This section provides some try-outs and according explanations for the server we
     /add-
     ```
     The page shows
-    ![Image2](L2P3.png)
+    ![Image3](L2P3.png)
     1. Methods called upon this request: When start the server on command line, we're executing the `start` method in `Server` class. Everytime the author requested like above, the method `handleRequest` in `Handler` class is called.
     2. The argument for `handleRequest`is an `URI` object in `java.net` library, and the according value for this argument is `new URI("http://localhost:3000/add-message?s=Hello")`, extracted by the code `exchange.getRequestURI()` to pass into the method. Note `Hello` is replaced by `How are you` in the second step. Other values also includes a string `s` with value of `Hello` and `Hello \n How are you` each time.
     3. `s` doesn't change at this time, since the string `add-message` is not detected, we will not get into the if-statement to change the value of `s`, i.e. it being instance variable of this class is kept the same after calling this method. `new URI()` certainly doesn't change since it's just an argument.
@@ -111,6 +111,8 @@ The author wrote several JUnit tests towards this method, some of which passed, 
   }
   ```
 
+### Non-"Failure Inducing Input"
+The two tests as inputs below are not failure inducing i.e. the output for these two inputs meets our expectation.
   ```
   @Test
   public void testAverageWithoutLowest() {
@@ -121,4 +123,32 @@ The author wrote several JUnit tests towards this method, some of which passed, 
     assertEquals(3.0, ArrayExamples.averageWithoutLowest(input1), 0.0001);
   }
   ```
+### Symptom
+Run the **three tests above** together, we will have failure below.
+![Image4](L2P4.png)
 
+### Bug / De-bug
+We found there’s a bug in the summation strategy of the method, that under the case when there are multiple lowest numbers, they drop them all. However, the target of this function is to only drop one of the lowest ones. So I added a boolean pointer `found` to indicate if we have dropped the lowest to avoid repeated counts, and revised the summing logic to make the `sum` available to be added by lowest number after we found the lowest number once. The revised code goes below.
+```
+  static double averageWithoutLowest(double[] arr) {
+    if (arr.length < 2) {
+      return 0.0;
+    }
+    double lowest = arr[0];
+    for (double num : arr) {
+      if (num < lowest) {
+        lowest = num;
+      }
+    }
+    double sum = 0;
+    boolean found = false;
+    for (double num : arr) {
+      if ((num != lowest) || (found)) {
+        sum += num;
+      } else {
+        found = true;
+      }
+    }
+    return sum / (arr.length - 1);
+  }
+```
