@@ -7,7 +7,7 @@ This practice goes based on the *NumberServer.java* and *Server.java* in lab act
 ### Server Implementation
 Below attached the codes for the revised handler. Compared with the original one for numbers, the structure is **eased** to accomodate a simpler and clearer logic, that it handles the following cases of requests
 1. `/add-message?s=<string>`: concatenate a new line the requested string to the current running string, and display the running string.
-2. `/`: Display the running string. Note the author deviates from the lab instruction to add this case, because usually a user will not directly have a request, they will instead go to kind of "home page" first, then do something. To accomodate this mute habit, the author added this case to prevent error happening.
+2. `/`: Display the running string. Note the author deviates from the lab instruction to add this case, because usually a user will not directly have a request, they will instead go to kind of "home page" first, then do something. To accomodate this mute habit, the author added this case (initially displaying a white board) to prevent error happening.
 3. Other: other requests would trigger a "404 Not Found!" to let the user know they're off the track.
 
 ```
@@ -33,3 +33,16 @@ class Handler implements URLHandler {
     }
 }
 ```
+Note this block of code is the only revision from the two files in lab activity, so for simplicity purpose the author didn't include other codes. Compared with the original number implementation, the author editted the code in a way replacing the instance variable as integer to be string. The logic is eased so that the `/increment` request is no longer available. Other edits are quite natural, following the syntax of Java.
+
+### Running the Server
+The author proposed a brief instruction regarding the steps of running the program and starting/playing with the server.
+0. Check if *StringServer.java* and *Server.java* is ready in current directory. If not, either move the files or direct into the according folder. Also check if the `java` and `javac` commands are ready under current environment. To keep it clean, see more information [here](https://stevela-hn.github.io/cse15l-lab-reports/) in Lab Report one.
+1. Run the following commands in order. The first one compiles the program while the second one run the program & start the server.
+```
+javac Server.java StringServer.java
+```
+```
+java StringServer 4000
+```
+Upon getting done, the terminal should output `Server Started! Visit http://localhost:4000` to indicate a successful running.
