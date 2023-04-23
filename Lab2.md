@@ -102,7 +102,15 @@ The function `averageWithoutLowest` aims to get the mean of the numbers in the i
   ```
 
 ### Failure Inducing Input
-The author wrote several JUnit tests towards this method, some of which passed, but some failed; we called the inputs of those failed ones failure inducing input. The test, within the tester class, are attached below for reference.
+The author wrote several JUnit tests towards this method, some of which passed, but some failed; we called the inputs of those failed ones failure inducing input. The failure inducing test, within the tester class, are attached below for reference.
+  ```
+  @Test
+  public void testAverageWithoutLowest() {
+    double[] input2 = { 3.0, 1.0, 1.0, 1.0, 3.0 };
+    assertEquals(2.0, ArrayExamples.averageWithoutLowest(input2), 0.0001);
+  }
+  ```
+
   ```
   @Test
   public void testAverageWithoutLowest() {
@@ -111,8 +119,6 @@ The author wrote several JUnit tests towards this method, some of which passed, 
 
     double[] input1 = { 3.0, 1.0, 3.0 };
     assertEquals(3.0, ArrayExamples.averageWithoutLowest(input1), 0.0001);
-
-    double[] input2 = { 3.0, 1.0, 1.0, 1.0, 3.0 };
-    assertEquals(2.0, ArrayExamples.averageWithoutLowest(input2), 0.0001);
   }
   ```
+
