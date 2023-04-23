@@ -129,7 +129,7 @@ Run the **three tests above** together, we will have failure below.
 
 ### Bug / De-bug
 We found there’s a bug in the summation strategy of the method, that under the case when there are multiple lowest numbers, they drop them all. However, the target of this function is to only drop one of the lowest ones. So I added a boolean pointer `found` to indicate if we have dropped the lowest to avoid repeated counts, and revised the summing logic to make the `sum` available to be added by lowest number after we found the lowest number once. The revised code goes below.
-```
+  ```
   static double averageWithoutLowest(double[] arr) {
     if (arr.length < 2) {
       return 0.0;
@@ -151,4 +151,4 @@ We found there’s a bug in the summation strategy of the method, that under the
     }
     return sum / (arr.length - 1);
   }
-```
+  ```
