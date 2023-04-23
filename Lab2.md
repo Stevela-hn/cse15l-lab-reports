@@ -57,14 +57,17 @@ Quick Notes
 This section provides some try-outs and according explanations for the server we wrote.
 
 - **Attempt 1**: Here I tested on the "normal functionality" of the web server; that I inputed some strings to see if the page outputs and accumulates as I expected.
-```
-/add-message?s=Hello
-```
-The page shows
-![Image2](L2P1.png)
+    ```
+    /add-message?s=Hello
+    ```
+    The page shows
+    ![Image2](L2P1.png)
 
-```
-/add-message?s=How are you
-```
-The page shows
-![Image2](L2P2.png)
+    ```
+    /add-message?s=How are you
+    ```
+    The page shows
+    ![Image2](L2P2.png)
+    1. Methods called upon this request: When start the server on command line, we're executing the `start` method in `Server` class. Everytime the author requested like above, the method `handleRequest` in `Handler` class is called.
+    2. The argument for `handleRequest`is an `URI` object in `java.net` library, and the according value for this argument is `new URI("http://localhost:3000/add-message?s=Hello")`, extracted by the code `exchange.getRequestURI()` to pass into the method. Note `Hello` is replaced by `How are you` in the second step. Other values also includes a string `s` with value of `Hello` and `Hello \n How are you` each time.
+    3. `s` changed to be longer as it is attached with an input string. `new URI()` certainly doesn't change since it's just an argument.
