@@ -56,4 +56,14 @@ Quick Notes
 ### Exmaples of Executing the program/server
 This section provides some try-outs and according explanations for the server we wrote.
 
-- Attempt 1
+- **Attempt 1**: Here I tested on the "normal functionality" of the web server; that I inputed some strings to see if the page outputs and accumulates as I expected.
+```
+/add-message?s=Hello
+```
+The page shows
+![Image1](L2P1.png)
+```
+/add-message?s=How are you
+```
+The page shows
+![Image2](L2P2.png)
