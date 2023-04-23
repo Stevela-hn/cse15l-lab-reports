@@ -153,5 +153,6 @@ We found there’s a bug in the summation strategy of the method, that under the
   }
   ```
 
-## Part3
+## Part 3
 In this section, the author will briefly summarize something new he learned from the lab of week 2 and week 3 at CSE15L.
+The author is graduating this quarter, so honestly most of the bulletpoints that covered in the lab activities were not new for him. But he is quite impressed by the **integrative use of Java with server**. Say during an interview, if the author is asked to solve a leetcode problem, then it's not difficult given adequate practice. But if the author is asked to implement a server, this sounds quite scary. But the implementation of `StringServer` in week 3 gives the author a nice "simplified example" of how those "high level terminals" are applied and practiced with programming languages.
