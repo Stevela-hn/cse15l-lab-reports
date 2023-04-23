@@ -71,3 +71,13 @@ This section provides some try-outs and according explanations for the server we
     1. Methods called upon this request: When start the server on command line, we're executing the `start` method in `Server` class. Everytime the author requested like above, the method `handleRequest` in `Handler` class is called.
     2. The argument for `handleRequest`is an `URI` object in `java.net` library, and the according value for this argument is `new URI("http://localhost:3000/add-message?s=Hello")`, extracted by the code `exchange.getRequestURI()` to pass into the method. Note `Hello` is replaced by `How are you` in the second step. Other values also includes a string `s` with value of `Hello` and `Hello \n How are you` each time.
     3. `s` changed to be longer as it is attached with an input string. `new URI()` certainly doesn't change since it's just an argument.
+
+- **Attempt 2**: Here I tested the "Illegal input" case.
+    ```
+    /add-
+    ```
+    The page shows
+    ![Image2](L2P3.png)
+    1. Methods called upon this request: When start the server on command line, we're executing the `start` method in `Server` class. Everytime the author requested like above, the method `handleRequest` in `Handler` class is called.
+    2. The argument for `handleRequest`is an `URI` object in `java.net` library, and the according value for this argument is `new URI("http://localhost:3000/add-message?s=Hello")`, extracted by the code `exchange.getRequestURI()` to pass into the method. Note `Hello` is replaced by `How are you` in the second step. Other values also includes a string `s` with value of `Hello` and `Hello \n How are you` each time.
+    3. `s` doesn't change at this time, since the string `add-message` is not detected, we will not get into the if-statement to change the value of `s`, i.e. it being instance variable of this class is kept the same after calling this method. `new URI()` certainly doesn't change since it's just an argument.
