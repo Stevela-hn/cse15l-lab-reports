@@ -39,13 +39,13 @@ Note this block of code is the only revision from the two files in lab activity,
 The author proposed a brief instruction regarding the steps of running the program and starting/playing with the server.
 0. Check if *StringServer.java* and *Server.java* is ready in current directory. If not, either move the files or direct into the according folder. Also check if the `java` and `javac` commands are ready under current environment. To keep it clean, see more information [here](https://stevela-hn.github.io/cse15l-lab-reports/) in Lab Report one.
 1. Run the following commands in order. The first one compiles the program while the second one run the program & start the server.
-```
-javac Server.java StringServer.java
-```
-```
-java StringServer 4000
-```
-Upon getting done, the terminal should output `Server Started! Visit http://localhost:4000` to indicate a successful running.
+    ```
+    javac Server.java StringServer.java
+    ```
+    ```
+    java StringServer 4000
+    ```
+    Upon getting done, the terminal should output `Server Started! Visit http://localhost:4000` to indicate a successful running.
 2. In a brower of local computer, open (http://localhost:4000) to play with the server.
 
 Quick Notes
