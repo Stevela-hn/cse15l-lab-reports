@@ -46,3 +46,8 @@ javac Server.java StringServer.java
 java StringServer 4000
 ```
 Upon getting done, the terminal should output `Server Started! Visit http://localhost:4000` to indicate a successful running.
+2. In a brower of local computer, open (http://localhost:4000) to play with the server.
+
+Quick Notes
+1. `4000` is a **port** that the web server runs on. It's not special, and feel free to pick others. It is an extra part of a URL that’s often used in development.
+2. `localhost` refers to the current computer.
