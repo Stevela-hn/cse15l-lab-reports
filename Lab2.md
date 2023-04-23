@@ -53,3 +53,7 @@ Quick Notes
 - `localhost` refers to the current computer.
 - You will see an white-board after accessing the link. That's the "home page" the author mentioned in the implementation part.
 
+### Exmaples of Executing the program/server
+This section provides some try-outs and according explanations for the server we wrote.
+
+- Attempt 1
