@@ -84,7 +84,7 @@ This section provides some try-outs and according explanations for the server we
 
 ## Part 2
 Here the author picks a case from Lab3 activity (debug session), and presents the "pipeline" of debugging.
-## Function Introduction
+### Function Introduction
 The function `averageWithoutLowest` aims to get the mean of the numbers in the input array with a lowest number dropped. It returns 0 when there's no element or only one elements. The **original** code attached below.
   ```
   static double averageWithoutLowest(double[] arr) {
@@ -98,5 +98,21 @@ The function `averageWithoutLowest` aims to get the mean of the numbers in the i
       if(num != lowest) { sum += num; }
     }
     return sum / (arr.length - 1);
+  }
+  ```
+
+### Failure Inducing Input
+The author wrote several JUnit tests towards this method, some of which passed, but some failed; we called the inputs of those failed ones failure inducing input. The test, within the tester class, are attached below for reference.
+  ```
+  @Test
+  public void testAverageWithoutLowest() {
+    double[] input0 = {};
+    assertEquals(3.0, ArrayExamples.averageWithoutLowest(input0), 0.0001);
+
+    double[] input1 = { 3.0, 1.0, 3.0 };
+    assertEquals(3.0, ArrayExamples.averageWithoutLowest(input1), 0.0001);
+
+    double[] input2 = { 3.0, 1.0, 1.0, 1.0, 3.0 };
+    assertEquals(2.0, ArrayExamples.averageWithoutLowest(input2), 0.0001);
   }
   ```
