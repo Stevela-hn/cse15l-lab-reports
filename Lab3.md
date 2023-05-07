@@ -28,6 +28,19 @@ This section aims to give 4 interesting command-line options or alternate ways t
 ### Section 1: Recursive search
 The option `-r` enables searching for some patterns/strings in all files under a directory. Remember in lab activities, `grep` is usually used to search on a specific `.txt` file or all `.txt` files in a folder. This is obviously not efficient enough under the cases files are stores as a hierarchical structure. The option `-r` solves the issue in such circumstances. Two examples are attached below. (Reference: the idea comes from the official doc of grep: https://www.gnu.org/software/grep/manual/grep.html)
 
+- Example 1: Searching for lines with word "most recent" in `/911report`
+  ```
+  $ grep -r "most recent" 911report
+  911report/chapter-1.txt:    On 9/11, the defense of U.S. airspace depended on close interaction between two federal agencies: the FAA and the North American Aerospace Defense Command (NORAD). The most recent hijacking that involved U.S. air traffic controllers, FAA management, and military coordination had occurred in 1993.90 In order to understand how the two agencies interacted eight years later, we will review their missions, command and control structures, and working relationship on the morning of 9/11.
+  911report/chapter-13.1.txt:                been introduced, most recently a bill by the chairman of the House Intelligence
+  911report/chapter-13.1.txt:            "This is government acting in new ways, to face new threats," the most recent Markle
+  ```
+  
+- Example 2: Searching for lines with word "most feasible" in `/government`. Note that this example well-display the ability of hierarchical search, because `/government` has one more level of folder. In general `-r` prints in a way of "[path]: line".
+  ```
+  $ grep -r "most feasible" government/
+  government/Post_Rate_Comm/Redacted_Study.txt:terminal dues appears most feasible among industrialized
+  ```
 
 ### Section 2: Count Matchings
 The `-c` option gives a very clean and clear output, that it instead print a count of matching lines for each input file. Note that in lab activities, the `grep` usually gives us a large amount of output texts, so that we have to save them into the other `.txt` files for further inspection. Admittedly, this enables more insightful exploration, but the author would like to emphasize that with a single `-c` option, the user could get to know the number of matching lines. This could serve as a "preliminary check" to see if some complex grep query gives an expected output. Say the user search by the regex query `'\w*ty\b'` to see how many lines contains words end with "ty", but got a count of 0. This is highly unlikely given it's popularity. In this way the user could immediately know "something's wrong", and get back to revise. Two examples are attached below. (Reference: the idea comes from the official doc of grep: https://www.gnu.org/software/grep/manual/grep.html)
